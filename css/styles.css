@@ -4763,13 +4763,16 @@ textarea.form-control-lg {
   list-style: none;
 }
 
+.breadcrumb-item {
+  color: #27ae60;
+}
 .breadcrumb-item + .breadcrumb-item {
   padding-left: 0.5rem;
 }
 .breadcrumb-item + .breadcrumb-item::before {
   float: left;
   padding-right: 0.5rem;
-  color: #6c757d;
+  color: #27ae60;
   content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
 }
 .breadcrumb-item.active {
@@ -11451,10 +11454,11 @@ body {
 }
 
 .sb-sidenav-dark {
-  background: #ECE9E6;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #f0f7ff;
   color: rgba(255, 255, 255, 0.5);
+  box-shadow: -1px 1px 28px -6px rgba(0,0,0,0.29);
+-webkit-box-shadow: -1px 1px 28px -6px rgba(0,0,0,0.29);
+-moz-box-shadow: -1px 1px 28px -6px rgba(0,0,0,0.29);
 }
 .sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
   color: #2c4964;

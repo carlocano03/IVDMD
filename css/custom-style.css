@@ -174,3 +174,17 @@
 .btn-package-secondary:hover {
     opacity: 0.9;
 }
+
+/*Button Started*/
+.btn-started {
+    padding: 8px 10px 8px 10px;
+    border: none;
+    background: #27ae60;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+}
+
+.btn-started:hover {
+    opacity: 0.8;
+}
