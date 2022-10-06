@@ -84,6 +84,9 @@
 }
 .card-primary {
     background: #70a1ff;
+    box-shadow: -1px 1px 28px -6px rgba(0,0,0,0.29);
+    -webkit-box-shadow: -1px 1px 28px -6px rgba(0,0,0,0.29);
+    -moz-box-shadow: -1px 1px 28px -6px rgba(0,0,0,0.29);
 }
 .card-secondary {
     background: #ECE9E6;  /* fallback for old browsers */
@@ -91,7 +94,10 @@
     background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .card-info {
-    background: #e2ebfd;
+    background: #dff9fb;
+    box-shadow: -1px 1px 28px -6px rgba(0,0,0,0.29);
+    -webkit-box-shadow: -1px 1px 28px -6px rgba(0,0,0,0.29);
+    -moz-box-shadow: -1px 1px 28px -6px rgba(0,0,0,0.29);
 }
 
 .card-avatar {
