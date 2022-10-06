@@ -87,6 +87,7 @@
     box-shadow: -1px 1px 28px -6px rgba(0,0,0,0.29);
     -webkit-box-shadow: -1px 1px 28px -6px rgba(0,0,0,0.29);
     -moz-box-shadow: -1px 1px 28px -6px rgba(0,0,0,0.29);
+    padding: 8px;
 }
 .card-secondary {
     background: #ECE9E6;  /* fallback for old browsers */
@@ -102,6 +103,11 @@
 
 .card-avatar {
     width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
     /* display: inline-block; */
 }
 .card .card-text h5{
