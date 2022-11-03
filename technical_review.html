@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="assets/img/RITM-Logo.png" rel="icon">
+    <title>IVDMD-RITM</title>
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/custom-style.css" rel="stylesheet" />
+
+    <style>
+        #table td:nth-child(1) {
+            text-align: center;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed" onload="startTime()">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background: #27ae60;">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3" href="index.html"><img src="assets/img/ritm-web_v5.png" style="width: 90%;"></a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
+            <i class="fas fa-bars"></i></button>
+
+        <!-- <div class="d-none d-md-inline-block form-inline order-1 order-lg-0 me-4 me-lg-0 text-white ms-2">IVDMD</div> -->
+        <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"></div>
+
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link active" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class="bi bi-bell-fill"></i>
+                    <span class="position-absolute top-20 start-90 translate-middle badge rounded-pill bg-danger">
+                        1
+                    </span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li class="text-center text-muted">You have 1 notification</li>
+                    <li>
+                        <hr class="dropdown-divider" />
+                    </li>
+
+                    <li class="dropdown-item">
+                        <i class="bi bi-bell-fill"></i>
+                        <p>Hello World</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading text-center">
+                            <img src="assets/img/avatar-new.png" alt="Avatar Image">
+                            <h5>User One</h5>
+                            <div class="avatar-text">21-0183</div>
+                            <div class="avatar-text mb-1">Sample Department</div>
+                            <a href="" class="logout-btn"><i class="bi bi-power me-1"></i>Logout</a>
+                        </div>
+                        <hr class="mt-0" style="background: #474787;">
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Main Dashboard
+                        </a>
+                        <a class="nav-link" href="IVDMD_secretariat.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
+                            IVDMD Secretariat
+                        </a>
+                        <a class="nav-link active" href="technical_review.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-list-columns-reverse"></i></div>
+                            Technical Review
+                        </a>
+                        <a class="nav-link" href="technical.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-wallet"></i></div>
+                            Manage Payment
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Dashboard</h1>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><span id="date"></span></li>
+                        <li class="breadcrumb-item"><span id="clock"></span></li>
+                    </ol>
+
+
+                    <div class="card">
+                        <div class="card-header" style="background: #009879; color: #fff; font-weight: 500;"><i
+                                class="bi bi-files me-2"></i>Document Review</div>
+                        <div class="card-body">
+                            <table class="table table-bordered" width="100%" id="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Action</th>
+                                        <th>Product</th>
+                                        <th>Product Details</th>
+                                        <th>Brand</th>
+                                        <th>Lot Number</th>
+                                        <th>Expiry Date</th>
+                                        <th>Date of Application</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><button class="btn btn-outline-success btn-sm"><i class="bi bi-folder-check me-2"></i>Review Product</button></td>
+                                        <td>Rapid Antigen test</td>
+                                        <td>65</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>7</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td><button class="btn btn-outline-success btn-sm"><i class="bi bi-folder-check me-2"></i>Review Product</button></td>
+                                        <td>Rapid Antigen Test (Self-administered)</td>
+                                        <td>32</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>3</td>
+                                        <td>21</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="py-3 text-white mt-auto" style="background: #fff;">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-secondary">Copyright &copy; Research Institute for Tropical Medicine</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/date-time.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#table').DataTable({
+                language: {
+                    search: '', searchPlaceholder: "Search Here...",
+                    processing: '<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i><br>Loading... ',
+                    "info": "_START_-_END_ of _TOTAL_ entries",
+                    paginate: {
+                        next: '<i class="fas fa-chevron-right"></i>',
+                        previous: '<i class="fas fa-chevron-left"></i>'
+                    }
+                },
+                "ordering": false,
+            });
+
+        });
+    </script>
+</body>
+
+</html>

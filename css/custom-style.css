@@ -73,8 +73,11 @@
 
 /*Cards*/
 .card {
-    border-radius: 10px;
+    /* border-radius: 10px; */
     border: none;
+    box-shadow: -1px 1px 28px -6px rgba(83, 83, 83, 0.29);
+    -webkit-box-shadow: -1px 1px 28px -6px rgba(83, 83, 83, 0.29);
+    -moz-box-shadow: -1px 1px 28px -6px rgba(83, 83, 83, 0.29);
 }
 
 .guest .card-body {
@@ -243,7 +246,7 @@
 .table {
     border-collapse: collapse;
     margin: 25px 0;
-    font-size: 0.9em;
+    font-size: 0.8em;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     border-radius: 5px 5px 0 0 !important;
 }
@@ -257,6 +260,7 @@
 .table th,
 .table td {
     padding: 4px 10px;
+    vertical-align: middle;
 }
 
 .table tbody tr {
@@ -274,4 +278,92 @@
 .table tbody tr.active-row {
     font-weight: bold;
     color: #009879;
+}
+
+.btn-custom {
+    border: none;
+    padding: 10px 10px;
+    width: 100%;
+    background: #27ae60;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.btn-custom:hover {
+    opacity: 0.9;
+}
+
+.btn-outline-custom {
+    border: 2px solid #27ae60;
+    padding: 10px 10px;
+    width: 100%;
+    background: #fff;
+    color: #27ae60;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.btn-outline-custom:hover {
+    background: #27ae60;
+    color: #fff;
+    transition: ease-in-out 0.3s;
+}
+
+/*--------------------------------------------------------------
+# Modal
+--------------------------------------------------------------*/
+/* .modal .modal-dialog {
+    box-shadow: 2px 7px 34px 4px rgba(0,0,0,0.46);
+    -webkit-box-shadow: 2px 7px 34px 4px rgba(0,0,0,0.46);
+    -moz-box-shadow: 2px 7px 34px 4px rgba(0,0,0,0.46);
+    border-radius: 25px;
+  } */
+
+.modal .modal-content {
+    /* border-radius: 25px; */
+    border: none;
+}
+
+.modal .modal-body h5 {
+    color: #f39c12;
+}
+
+.modal .modal-footer {
+    background: #11998e;
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+    background: linear-gradient(to right, #38ef7d, #11998e);
+    /* border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px; */
+}
+
+.status-board label {
+    color: #27ae60;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: 1px underline #2ecc71;
+    text-underline-offset: 3px;
+}
+
+.details {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status-board {
+    max-height: 500px;
+    overflow: auto;
+}
+
+.logout-btn {
+    background: #ff3838;
+    text-decoration: none;
+    padding: 5px 15px;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.logout-btn:hover {
+    background: #ff4d4d;
+    color: #fff;
 }

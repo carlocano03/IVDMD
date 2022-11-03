@@ -13,8 +13,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/custom-style.css" rel="stylesheet" />
+
+    <style>
+        #table_status td:nth-child(1),
+        #table_status td:nth-child(2),
+        #table_status td:nth-child(3),
+        #table_status td:nth-child(4),
+        #table_status td:nth-child(5),
+        #table_status td:nth-child(6) {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body class="sb-nav-fixed" onload="startTime()">
@@ -31,17 +43,23 @@
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
+                <a class="nav-link active" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
-                    <i class="fas fa-user fa-fw me-1"></i>Hello, Sample User
+                    <i class="bi bi-bell-fill"></i>
+                    <span class="position-absolute top-20 start-90 translate-middle badge rounded-pill bg-danger">
+                        1
+                    </span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!">Settings</a></li>
-                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li class="text-center text-muted">You have 1 notification</li>
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+
+                    <li class="dropdown-item">
+                        <i class="bi bi-bell-fill"></i>
+                        <p>Hello World</p>
+                    </li>
                 </ul>
             </li>
         </ul>
@@ -51,21 +69,30 @@
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
-                    <div class="nav">   
+                    <div class="nav">
                         <div class="sb-sidenav-menu-heading text-center">
                             <img src="assets/img/avatar-new.png" alt="Avatar Image">
                             <h5>User One</h5>
                             <div class="avatar-text">21-0183</div>
-                            <div class="avatar-text">Sample Department</div>
+                            <div class="avatar-text mb-1">Sample Department</div>
+                            <a href="" class="logout-btn"><i class="bi bi-power me-1"></i>Logout</a>
                         </div>
                         <hr class="mt-0" style="background: #474787;">
                         <a class="nav-link active" href="index.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Main Dashboard
                         </a>
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="IVDMD_secretariat.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
-                            Application List
+                            IVDMD Secretariat
+                        </a>
+                        <a class="nav-link" href="technical_review.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-list-columns-reverse"></i></div>
+                            Technical Review
+                        </a>
+                        <a class="nav-link" href="technical.html">
+                            <div class="sb-nav-link-icon"><i class="bi bi-wallet"></i></div>
+                            Manage Payment
                         </a>
                     </div>
                 </div>
@@ -87,17 +114,19 @@
                                     <div class="pt-4 ps-3 pe-3 mt-5">
                                         <h5 class="fw-bold" style="color: #27ae60;">Welcome back, your dashboard is
                                             ready!</h5>
-                                        <p style="text-align: justify;">Great job, your affiliate dashboard is ready to
-                                            go! You can view sales, generate links, prepare coupons, and download
-                                            affiliate reports
-                                            using this dashboard.
+                                        <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur
+                                            adipiscing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
+                                            ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                         </p>
                                         <button class="btn-started">Get Started<i
                                                 class="fas fa-chevron-right ms-2"></i></button>
                                     </div>
                                 </div>
                                 <div class="col-xl-4 col-md-6">
-                                    <img src="assets/img/dashboard.png" alt="Dashboard-Img" style="width: 100%; margin-top: -50px;">
+                                    <img src="assets/img/dashboard.png" alt="Dashboard-Img"
+                                        style="width: 100%; margin-top: -50px;">
                                 </div>
                             </div>
                         </div>
@@ -172,29 +201,78 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-md-7 mb-4">
+                            <div class="alert alert-success p-2">New Application Registered - For Review</div>
+                            <div class="table-responsive">
+                                <table class="table" width="100%" id="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Manufacturer</th>
+                                            <th>Stage</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Product 1</td>
+                                            <td>Manufacturer 1</td>
+                                            <td>Stage 1</td>
+                                            <td>Status 1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Product 2</td>
+                                            <td>Manufacturer 2</td>
+                                            <td>Stage 2</td>
+                                            <td>Status 2</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-md-5 mb-5">
+                            <div class="card">
+                                <div class="card-header text-center"
+                                    style="background: #009879; color: #fff; font-weight: 500;">Status Dashboard</div>
+                                <div class="card-body">
+                                    <table class="table table-bordered" width="100%" id="table_status">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">IVDMD</th>
+                                                <th class="text-center">COMPLETED</th>
+                                                <th class="text-center">STAGE 4</th>
+                                                <th class="text-center">STAGE 3</th>
+                                                <th class="text-center">STAGE 2</th>
+                                                <th class="text-center">STAGE 1</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Rapid Antigen test</td>
+                                                <td>65</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>7</td>
+                                                <td>0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rapid Antigen Test (Self-administered)</td>
+                                                <td>32</td>
+                                                <td>0</td>
+                                                <td>0</td>
+                                                <td>3</td>
+                                                <td>21</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- End of row -->
-
-                    <div class="table-responsive">
-                        <table class="table" width="100%" id="table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Points</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Dom</td>
-                                    <td>6000</td>
-                                </tr>
-                                <tr class="active-row">
-                                    <td>Melissa</td>
-                                    <td>5150</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </main>
 
@@ -231,6 +309,16 @@
                     }
                 },
                 "ordering": false,
+            });
+
+            $('#table_status').DataTable({
+                language: {
+                    search: '', searchPlaceholder: "Search Here...",
+                    processing: '<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i><br>Loading... ',
+                },
+                "ordering": false,
+                "info": false,
+                "paginate": false,
             });
         });
     </script>
